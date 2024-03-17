@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.form_page{
+    width: 1000px;
+    height: 750px;
+    margin: 0 auto;
+    border: 2px dashed black;
+}
+.form_header{
+    height: 100px;
+    width: 100%;
+    border-bottom: 2px dashed black;
+}
+.form_header header{
+    text-align: center;
+    border-bottom: 2px dashed black;
+    height: 50px;
+}
+nav{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.form_header nav ul {
+    display: flex;
+    align-items: center;
+}
+.form_header nav ul li{
+    list-style-type: none;
+    padding: 20px;
+}
+li a{
+    text-decoration: none;
+}
+.form_section{
+    height: 550px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.section_1{
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px dashed black;
+}
+.section_1 ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+    padding-inline-start: 0px;
+}
+.section_1 ul li{
+    text-align: center;
+}
+.section_2{
+    width: 70%;
+    height: 550px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    position: relative;
+    /* Khoảng cách giữa các card */
+}
+.card{
+    width: 100%;
+    height: 220px;
+    border: 1px solid black;
+    text-align: center;
+}
+.card-img-top {
+    width: 100%;
+    height: 140px;
+}
+
+/*  */
+.card img:hover {
+    transition-duration: 0.5s;
+    /* Safari & Google Chrome */
+    -webkit-transition-duration: 0.5s;
+    /* Mozilla Firefox */
+    -moz-transition-duration: 0.5s;
+    /* Opera */
+    -o-transition-duration: 0.5s;
+    /* IE 9 */
+    -ms-transition-duration: 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    cursor: pointer;
+}
+footer{
+    text-align: center;
+    width: auto;
+    height: 100px;
+    line-height: 100px;
+    border-top: 2px dashed black;
+}
+
+.pagination {
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%; 
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+.ProductManagement{
+    width: 70%;
+    height: 550px;
+    padding: 5px;
+    position: relative;
+}
+.company{
+    width: 70%;
+    height: 550px;
+    padding: 5px;
+    padding-top: 80px;
+}
+a{
+    text-decoration: none;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid black;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid black;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+tr{
+    height: 50px;
+}
+th {
+    background-color: #f2f2f2;
+}
