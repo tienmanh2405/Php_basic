@@ -6,16 +6,16 @@
     width: 1000px;
     height: 750px;
     margin: 0 auto;
-    border: 2px dashed black;
+    border: 2px solid black;
 }
 .form_header{
     height: 100px;
     width: 100%;
-    border-bottom: 2px dashed black;
+    border-bottom: 2px solid black;
 }
 .form_header header{
     text-align: center;
-    border-bottom: 2px dashed black;
+    border-bottom: 2px solid black;
     height: 50px;
 }
 nav{
@@ -39,6 +39,7 @@ li a{
     width: 100%;
     display: flex;
     justify-content: center;
+    /* position: relative; */
 }
 .section_1{
     width: 30%;
@@ -47,7 +48,7 @@ li a{
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    border-right: 2px dashed black;
+    border-right: 2px solid black;
 }
 .section_1 ul{
     display: flex;
@@ -67,7 +68,6 @@ li a{
     grid-gap: 10px;
     padding: 10px;
     position: relative;
-    /* Khoảng cách giữa các card */
 }
 .card{
     width: 100%;
@@ -106,7 +106,8 @@ footer{
     width: auto;
     height: 100px;
     line-height: 100px;
-    border-top: 2px dashed black;
+    border-top: 2px solid black;
+    position: static;
 }
 
 .pagination {
@@ -141,6 +142,7 @@ footer{
     height: 550px;
     padding: 5px;
     position: relative;
+    overflow: auto;
 }
 .company{
     width: 70%;
@@ -150,6 +152,11 @@ footer{
 }
 a{
     text-decoration: none;
+    color: black;
+    transition: color 0.5s;
+}
+a:hover{
+    color: rgb(156, 151, 151);
 }
 table {
     width: 100%;

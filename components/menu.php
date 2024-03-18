@@ -29,7 +29,7 @@
                         echo "<li><a href='?product=" . $row['ProductID'] . "'>" . $row['ProductCarrier'] . "</a></li>";
                      }
                  } else {
-                     echo "Không có dữ liệu.";
+                    echo '<script>alert("Không có dữ liệu.");</script>';
                  }
                 }
                 //Đóng kết nối
