@@ -56,13 +56,22 @@
                     ';
             
             }else if(isset($_GET['updateProduct'])){
+                $id = $_GET['id'];
+                $query = "SELECT * FROM allproduct WHERE id = $id";
+                $result = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_array($result)) {
+                    $name = $row['name'];
+                    $ProductID = $row['ProductID'];
+                    $price = $row['price'];
+                    $companyName = $row['companyName'];
+                }
                 echo'
                     <h2>Update Product</h2>
                     <form action="#" method="POST" enctype="multipart/form-data">
                     <table>
                         <tr>
                             <td><label for="name">Name:</label></td>
-                            <td><input type="text" id="name" name="name" required></td>
+                            <td><input type="text" id="name" name="name" value="'.$name.'"></td>
                         </tr>
                         <tr>
                             <td><label for="img">Images:</label></td>
@@ -70,15 +79,15 @@
                         </tr>
                         <tr>
                             <td><label for="ProductID">ProductID:</label></td>
-                            <td><input type="text" id="ProductID" name="ProductID" required></td>
+                            <td><input type="text" id="ProductID" name="ProductID" value="'.$ProductID.'"></td>
                         </tr>
                         <tr>
                             <td><label for="price">Price:</label></td>
-                            <td><input type="text" id="price" name="price" required></td>
+                            <td><input type="text" id="price" name="price" value="'.$price.'"></td>
                         </tr>
                         <tr>
                             <td><label for="companyName">Company Name:</label></td>
-                            <td><input type="text" id="companyName" name="companyName" required></td>
+                            <td><input type="text" id="companyName" name="companyName" value="'.$companyName.'"></td>
                         </tr>
                         <tr>
                             <td>Mô tả</td>

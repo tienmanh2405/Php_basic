@@ -12,25 +12,34 @@
             $companies = "SELECT * FROM companies";
             $result = mysqli_query($conn, $companies);
             if(isset($_GET['updateCompany'])){
+                $CompanyID = $_GET['CompanyID'];
+                $query = "SELECT * FROM companies WHERE CompanyID = $CompanyID";
+                $result = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_array($result)) {
+                    $CompanyName = $row['CompanyName'];
+                    $CompanyAddress = $row['CompanyAddress'];
+                    $CompanyPhone = $row['CompanyPhone'];
+                    $CompanyEmail = $row['CompanyEmail'];
+                }
                 echo'
                     <h2>Update Company</h2>
                     <form action="#" method="post">
                     <table>
                         <tr>
                             <td><label for="CompanyName">Company Name:</label></td>
-                            <td><input type="text" id="CompanyName" name="CompanyName" required></td>
+                            <td><input type="text" id="CompanyName" name="CompanyName" value="'.$CompanyName.'"></td>
                         </tr>
                         <tr>
                             <td><label for="CompanyAddress">Company Address:</label></td>
-                            <td><input type="text" id="CompanyAddress" name="CompanyAddress" required></td>
+                            <td><input type="text" id="CompanyAddress" name="CompanyAddress" value="'.$CompanyAddress.'"></td>
                         </tr>
                         <tr>
                             <td><label for="CompanyPhone">Company Phone:</label></td>
-                            <td><input type="text" id="CompanyPhone" name="CompanyPhone" required></td>
+                            <td><input type="text" id="CompanyPhone" name="CompanyPhone" value="'.$CompanyPhone.'"></td>
                         </tr>
                         <tr>
                             <td><label for="CompanyEmail">Company Email:</label></td>
-                            <td><input type="email" id="CompanyEmail" name="CompanyEmail" required></td>
+                            <td><input type="email" id="CompanyEmail" name="CompanyEmail" value="'.$CompanyEmail.'"></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -56,7 +65,7 @@
                             WHERE CompanyID = '$CompanyID'";
 
                     if(mysqli_query($conn, $sql)){
-                        echo '<script>alert("Cập nhật thông tin công ty thành công.");</script>';
+                        echo '<script>alert("Cập nhật thông tin công ty thành công."); window.location.href="index.php?quanly=congty";</script>';
                     } else{
                         echo '<script>alert("Lỗi");</script>' . mysqli_error($conn);
                     }
